@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit/dist/createSlice"
+import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
     results: [],
@@ -8,7 +8,7 @@ const initialState = {
     isFetching: false
 }
 
-const searchSlice = createSlice({
+export const searchSlice = createSlice({
     name: "searchSlice",
     initialState,
     reducers: {
@@ -37,4 +37,4 @@ const searchSlice = createSlice({
 })
 
 export const { searchFilms, fetchedSearchFilms, resetState } = searchSlice.actions
-export default searchSlice.reducers
+export default searchSlice.reducer
