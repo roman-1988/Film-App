@@ -3,6 +3,7 @@ import { CssBaseline } from "@mui/material"
 import { Link } from "react-router-dom"
 import logoImg from "../assets/logo.png"
 import { styled } from "@mui/system"
+import { SearchFilmsSuggestion } from "../containers/SearchFilmsSuggestion"
 
 const darkTheme = createTheme({
     palette: {
@@ -18,10 +19,10 @@ const Img = styled("img")({
     maxWidth: "100%"
 })
 
-const LayoutWrapper = styled("div")(({theme}) => ({
+const LayoutWrapper = styled("div")(({ theme }) => ({
     margin: 24,
     width: "auto",
-    [theme.breakpoints.up("lg")] : {
+    [theme.breakpoints.up("lg")]: {
         marginLeft: "auto",
         marginRight: "auto",
         width: theme.breakpoints.values.lg
@@ -36,6 +37,7 @@ const Layout = ({ children }) => {
                 <Link to="/">
                     <Img src={logoImg} alt="The films db" />
                 </Link>
+                <SearchFilmsSuggestion />
             </LayoutWrapper>
             {children}
         </ThemeProvider>
